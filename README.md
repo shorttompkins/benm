@@ -34,8 +34,9 @@ node 0.10+, npm, grunt
 
     $ sudo npm install -g grunt-cli
     $ npm install
+    $ grunt init:dev
 
-init:dev will download and install the latest bower dependencies.
+Grunt init:dev only needs to run the first time to prepare the vendor.js files.
 
 ## Running the App:
 
@@ -50,13 +51,13 @@ Requires PhantomJS to be installed globally:
 
     $ sudo npm install -g phantomjs
 
-To run tests once:
-
-    $ grunt test:client
-
 To run tests in TDD watch mode:
 
     $ grunt tdd
+
+To run tests once:
+
+    $ grunt test:client
 
 ### Server Tests:
 
