@@ -14,6 +14,7 @@ created using the following tools/frameworks/librarys/languages/whatevs:
   * Jasmine tests
  * MongoDB
   * Mongoose
+
  * Bower
   * package.json
  * Grunt:
