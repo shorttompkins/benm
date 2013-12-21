@@ -16,18 +16,18 @@ created using the following tools/frameworks/librarys/languages/whatevs:
    * Mongoose
 
  * Bower
-    * package.json
+   * package.json
  * Grunt:
-    * Bower install
-    * Browserify
-    * Handlebars (precompiled)
-    * jsHinting
-    * LESS
-    * Minification/Uglification
-    * Karma test run/tdd
-    * Watchers
-    * Concatenation/Copy
-    * Concurrent runs (server, karma, mongod, etc)
+   * Bower install
+   * Browserify
+   * Handlebars (precompiled)
+   * jsHinting
+   * LESS
+   * Minification/Uglification
+   * Karma test run/tdd
+   * Watchers
+   * Concatenation/Copy
+   * Concurrent runs (server, karma, mongod, etc)
 
 ## Requirements
 
