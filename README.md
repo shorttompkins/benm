@@ -1,9 +1,33 @@
-# New User Experience
+# B.E.N.M Boilerplate
 
-Present new users with an improved first list creation experience.  The node
-server acts as a middle tier between the front-end (sites) and the api that
-talks to postgres.  The front-end client is a Backbone single page application
-that speaks exclusively to this node server.
+This is a pretty hefty, because its complete from A-Z, boilerplate for a web app
+created using the following tools/frameworks/librarys/languages/whatevs:
+
+ * Backbone.js
+   * Handlebars
+   * Browserify
+   * Jasmine
+   * Karma
+   * Basic UI app
+ * Express / Node.js
+   * Handlebars
+   * Jasmine tests
+ * MongoDB
+   * Mongoose
+
+ * Bower
+    * package.json
+ * Grunt:
+    * Bower install
+    * Browserify
+    * Handlebars (precompiled)
+    * jsHinting
+    * LESS
+    * Minification/Uglification
+    * Karma test run/tdd
+    * Watchers
+    * Concatenation/Copy
+    * Concurrent runs (server, karma, mongod, etc)
 
 ## Requirements
 
@@ -37,4 +61,4 @@ To run tests in TDD watch mode:
 
 ### Server Tests:
 
-To be determined.
+Coming soon!
