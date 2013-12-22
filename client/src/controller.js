@@ -30,7 +30,10 @@ module.exports = Controller = Marionette.Controller.extend({
 
     add: function() {
         App.core.vent.trigger('app:log', 'Controller: "Add Contact" route hit.');
-        var view = window.App.views.addContactView;
+        //var view = window.App.views.addContactView;
+        //Note: reusing the cached view was causing events to NOT fire on
+        //subsequent rounds of reuse... why?
+        var view = new AddContactView();
         this.renderView(view);
     },
 

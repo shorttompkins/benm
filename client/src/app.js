@@ -30,6 +30,7 @@ App.prototype.start = function(){
         if (Backbone.history) {
             App.controller = new Controller();
             App.router = new Router({ controller: App.controller });
+            App.core.vent.trigger('app:log', 'App: Backbone.history starting');
             Backbone.history.start();
         }
 

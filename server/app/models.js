@@ -8,7 +8,8 @@ var Contact = new Schema({
         first:  { type: String },
         last:   { type: String }
     },
-    phone:      { type: String }
+    phone:      { type: String },
+    gravatar:   { type: String }
 });
 
 module.exports = {
