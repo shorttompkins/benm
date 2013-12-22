@@ -47,6 +47,10 @@ watchers on scripts and less files for rebuild.
 
     $ grunt server
 
+Note: Windows users, for some reason the grunt shell task will not launch
+mongod during runtime (so the node server will crash).  Be sure to launch
+mongod in another window before starting grunt server.
+
 ### Front-end Tests/TDD:
 
 Requires PhantomJS to be installed globally:
