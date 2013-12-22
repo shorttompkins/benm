@@ -1,7 +1,8 @@
 # B.E.N.M Boilerplate
 
-This is a pretty hefty, because its complete from A-Z, boilerplate for a web
-app created using the following tools/frameworks/libraries/languages/whatevs:
+A fairly complete boilerplate web app created using primarily:
+
+Backbone.js, ExpressJS & node.js, MongoDB
 
  * Backbone.js
   * Handlebars
