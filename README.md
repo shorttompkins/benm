@@ -4,6 +4,8 @@ A fairly complete boilerplate web app created using primarily:
 
 Backbone.js, ExpressJS & node.js, MongoDB
 
+The app features a complete backend using node.js with ExpressJS, a data layer using MongoDB with Mongoose, and a complete front-end application built using Backbone.js (with Marionette and Browserify).  The front-end application is a simply Contacts manager.  All of the code is fairly basic yet functional.
+
  * Backbone.js
   * Handlebars
   * Browserify
