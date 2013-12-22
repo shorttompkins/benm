@@ -35,9 +35,6 @@ each.
 
     $ sudo npm install -g grunt-cli
     $ npm install
-    Note: there is currently a bug where grunt-browserify needs to be installed
-    again immediately after:
-    $ npm install grunt-browserify
     $ grunt init:dev
 
 Grunt init:dev only needs to be run the first time to prepare the vendor.js
