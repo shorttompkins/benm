@@ -48,6 +48,7 @@
     "hbsfy": "~1.0.0",
     "handlebars-runtime": "~1.0.12",
     "express3-handlebars": "~0.5.0",
-    "grunt-shell-spawn": "~0.3.0"
+    "grunt-shell-spawn": "~0.3.0",
+    "MD5": "~1.2.0"
   }
 }

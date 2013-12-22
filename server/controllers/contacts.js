@@ -1,4 +1,5 @@
-var models = require('../app/models');
+var models = require('../app/models'),
+    md5 = require('MD5');
 
 module.exports = {
     index: function(req, res) {
@@ -14,9 +15,8 @@ module.exports = {
         });
     },
     add: function(req, res) {
-        console.log(req.body);
-
         var newContact = new models.Contact(req.body);
+        newContact.gravatar = md5(newContact.email);
         newContact.save(function(err, contact) {
             if (err)
                 res.json({});

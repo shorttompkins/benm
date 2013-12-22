@@ -30,7 +30,7 @@ created using the following tools/frameworks/librarys/languages/whatevs:
 
 ## Requirements
 
-node 0.10+, npm, grunt
+node 0.10+ (and npm), mongodb - visit nodejs.org and mongodb.com to download each.
 
     $ sudo npm install -g grunt-cli
     $ npm install
