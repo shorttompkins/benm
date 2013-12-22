@@ -1,7 +1,7 @@
 # B.E.N.M Boilerplate
 
-This is a pretty hefty, because its complete from A-Z, boilerplate for a web app
-created using the following tools/frameworks/librarys/languages/whatevs:
+This is a pretty hefty, because its complete from A-Z, boilerplate for a web
+app created using the following tools/frameworks/libraries/languages/whatevs:
 
  * Backbone.js
   * Handlebars
@@ -30,13 +30,18 @@ created using the following tools/frameworks/librarys/languages/whatevs:
 
 ## Requirements
 
-node 0.10+ (and npm), mongodb - visit nodejs.org and mongodb.com to download each.
+node 0.10+ (and npm), mongodb - visit nodejs.org and mongodb.com to download
+each.
 
     $ sudo npm install -g grunt-cli
     $ npm install
+    Note: there is currently a bug where grunt-browserify needs to be installed
+    again immediately after:
+    $ npm install grunt-browserify
     $ grunt init:dev
 
-Grunt init:dev only needs to run the first time to prepare the vendor.js files.
+Grunt init:dev only needs to be run the first time to prepare the vendor.js
+files.
 
 ## Running the App:
 
