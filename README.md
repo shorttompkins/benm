@@ -1,10 +1,11 @@
 # B.E.N.M Boilerplate
 
-A fairly complete boilerplate web app created using primarily:
-
 Backbone.js, ExpressJS & node.js, MongoDB
 
-The app features a complete backend using node.js with ExpressJS, a data layer using MongoDB with Mongoose, and a complete front-end application built using Backbone.js (with Marionette and Browserify).  The front-end application is a simply Contacts manager.  All of the code is fairly basic yet functional.
+This boilerplate app features a complete backend using node.js with ExpressJS, a data layer using MongoDB with Mongoose, and a complete front-end application built using Backbone.js (with Marionette and Browserify).  The front-end application is a simple Contacts manager.  All of the code is fairly basic yet functional.
+
+A detailed blog post covering this entire application can be found here:
+*link coming soon*
 
  * Backbone.js
   * Handlebars
