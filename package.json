@@ -5,7 +5,7 @@
   "author": "Jason Krol",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jkat98/benm_boilerplate.git"
+    "url": "https://github.com/jkat98/benm.git"
   },
   "engines": {
     "node": "0.10.x"
