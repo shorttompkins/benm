@@ -8,6 +8,6 @@ module.exports = ContactDetailsView = Marionette.ItemView.extend({
 
     goBack: function(e) {
         e.preventDefault();
-        window.App.router.navigate('#',{trigger: true});
+        window.App.controller.home();
     }
 });

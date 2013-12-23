@@ -19,6 +19,6 @@ module.exports = AddView = Marionette.ItemView.extend({
 
         window.App.data.contacts.create(newContact);
         window.App.core.vent.trigger('app:log', 'Add View: Saved new contact!');
-        window.App.router.navigate('#', { trigger: true });
+        window.App.controller.home();
     }
 });

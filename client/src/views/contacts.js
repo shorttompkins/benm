@@ -10,7 +10,8 @@ var itemView = Marionette.ItemView.extend({
     },
 
     showDetails: function() {
-        window.App.router.navigate('details/' + this.model.id, { trigger: true });
+        window.App.core.vent.trigger('app:log', 'Contacts View: showDetails hit.');
+        window.App.controller.details(this.model.id);
     }
 });
 
