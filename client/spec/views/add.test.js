@@ -12,6 +12,9 @@ describe('view:add', function() {
         expect(addView.save).toBeDefined();
     });
 
+    //dont worry about catching the event - just test the functionality
+    //of the event handler
+
     // it('should trigger the save function on click', function() {
     //     addView.render();
     //     addView.$el.find('a.save-button').trigger('click');
