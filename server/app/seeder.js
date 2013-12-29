@@ -21,26 +21,26 @@ module.exports = {
                 });
 
                 newContact = new models.Contact({
-                    email: 'dskboudge@gmail.com',
+                    email: 'testerson@example.com',
                     name: {
-                        first: 'Dustin',
-                        last: 'Krol'
+                        first: 'Steve',
+                        last: 'Testerson'
                     },
                     phone: '215-123-1234',
-                    gravatar: md5('dskboudge@gmail.com')
+                    gravatar: md5('testerson@example.com')
                 });
                 newContact.save(function(err, contact) {
                     console.log('successfully inserted contact: ' + contact._id);
                 });
 
                 newContact = new models.Contact({
-                    email: 'polartennis@gmail.com',
+                    email: 'nancy@testerson.com',
                     name: {
-                        first: 'Andrea',
-                        last: 'Krol'
+                        first: 'Nancy',
+                        last: 'Testerson'
                     },
                     phone: '215-123-1234',
-                    gravatar: md5('polartennis@gmail.com')
+                    gravatar: md5('nancy@testerson.com')
                 });
                 newContact.save(function(err, contact) {
                     console.log('successfully inserted contact: ' + contact._id);
