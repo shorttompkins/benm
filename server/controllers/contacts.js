@@ -1,5 +1,5 @@
 var models = require('../app/models'),
-    md5 = require('MD5');
+    md5 = require('md5');
 
 module.exports = {
     index: function(req, res) {

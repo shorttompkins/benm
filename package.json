@@ -15,7 +15,9 @@
   },
   "dependencies": {
     "express": "latest",
-    "mongoose": "~3.8.3"
+    "mongoose": "~3.8.3",
+    "express3-handlebars": "~0.5.0",
+    "MD5": "~1.2.0"
   },
   "devDependencies": {
     "bower": "~1.2.8",
@@ -48,8 +50,6 @@
     "grunt-contrib-cssmin": "~0.7.0",
     "hbsfy": "~1.0.0",
     "handlebars-runtime": "~1.0.12",
-    "express3-handlebars": "~0.5.0",
-    "grunt-shell-spawn": "~0.3.0",
-    "MD5": "~1.2.0"
+    "grunt-shell-spawn": "~0.3.0"
   }
 }
