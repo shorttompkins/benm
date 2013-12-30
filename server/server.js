@@ -30,7 +30,7 @@ if ('development' == app.get('env')) {
 
 //connect to the db server:
 //mongoose.connect('mongodb://localhost/MyApp');
-mongoose.connect(MONGOHQ_URL);
+mongoose.connect('mongodb://contactsu:ocgnrules@linus.mongohq.com:10099/app20800156');
 mongoose.connection.on('open', function() {
     console.log("Connected to Mongoose...");
 
