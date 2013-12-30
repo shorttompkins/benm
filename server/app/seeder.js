@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     models = require('./models'),
-    md5 = require('MD5');
+    md5 = require('md5');
 
 module.exports = {
     check: function() {
