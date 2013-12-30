@@ -11,7 +11,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "start": "grunt server"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "latest",

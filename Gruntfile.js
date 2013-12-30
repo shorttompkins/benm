@@ -98,13 +98,13 @@ module.exports = function(grunt) {
             dev: {
                 files: [{
                     src: 'build/<%= pkg.name %>.js',
-                    dest: 'server/public/js/<%= pkg.name %>.js'
+                    dest: 'public/js/<%= pkg.name %>.js'
                 }, {
                     src: 'build/<%= pkg.name %>.css',
-                    dest: 'server/public/css/<%= pkg.name %>.css'
+                    dest: 'public/css/<%= pkg.name %>.css'
                 }, {
                     src: 'client/img/*',
-                    dest: 'server/public/img/'
+                    dest: 'public/img/'
                 }]
             },
             prod: {
@@ -161,9 +161,9 @@ module.exports = function(grunt) {
         nodemon: {
             dev: {
                 options: {
-                    file: 'server/server.js',
+                    file: 'server.js',
                     nodeArgs: ['--debug'],
-                    watchedFolders: ['server/controllers', 'server/app'],
+                    watchedFolders: ['controllers', 'app'],
                     env: {
                         PORT: '3300'
                     }
