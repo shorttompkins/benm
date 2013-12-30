@@ -29,8 +29,7 @@ if ('development' == app.get('env')) {
 }
 
 //connect to the db server:
-//mongoose.connect('mongodb://localhost/MyApp');
-mongoose.connect('mongodb://contactsu:ocgnrules@linus.mongohq.com:10099/app20800156');
+mongoose.connect('mongodb://localhost/MyApp');
 mongoose.connection.on('open', function() {
     console.log("Connected to Mongoose...");
 
