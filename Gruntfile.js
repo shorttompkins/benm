@@ -222,6 +222,8 @@ module.exports = function(grunt) {
     grunt.registerTask('build:dev', ['clean:dev', 'browserify:app', 'browserify:test', 'jshint:dev', 'less:transpile', 'concat', 'copy:dev']);
     grunt.registerTask('build:prod', ['clean:prod', 'browserify:vendor', 'browserify:app', 'jshint:all', 'less:transpile', 'concat', 'cssmin', 'uglify', 'copy:prod']);
 
+    grunt.registerTask('heroku', ['init:dev', 'build:dev']);
+
     grunt.registerTask('server', ['build:dev', 'concurrent:dev']);
 
     grunt.registerTask('test:client', ['karma:test']);
