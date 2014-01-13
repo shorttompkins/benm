@@ -31,6 +31,11 @@ A detailed blog post covering this entire application can be found here:
   * Watchers
   * Concatenation/Copy
   * Concurrent runs (server, karma, mongod, etc)
+ * GulpJS:
+  * New build system similar to Grunt.js.  Still early stages of development.  Missing the following functionality:
+   * Karma tests - plugins just dont work currently
+   * uglification, minification, etc - didnt bother with yet
+   * Bower - nothing exists for GulpJS withing manually writing Bower stuff
 
 ## Requirements
 
