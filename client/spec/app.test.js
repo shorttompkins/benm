@@ -1,4 +1,4 @@
-var App = require('../src/app.js'),
+var App = require('../src/app'),
     Marionette = require('backbone.marionette');
 
 describe('App', function() {

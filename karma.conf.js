@@ -11,11 +11,8 @@ module.exports = function(config) {
         // frameworks to use
         frameworks: ['jasmine'],
 
-
         // list of files / patterns to load in the browser
-        // NOTE: do NOT include jasmine here because grunt-karma already does
         files: [
-            'build/vendor.js',
             'build/tests.js',
         ],
 

@@ -1,76 +1,109 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
+    browserify = require('browserify'),
+    bower = require('bower'),
+    source = require('vinyl-source-stream'),
     tasks = require("gulp-load-tasks")();
 
+// this should really be reading the package.json file
 var appName = 'myapp';
 
 // BOWER:
 gulp.task('bower', function() {
-    gulp.src('./**/**')
-        .pipe(tasks.exec('bower install'));
-});
+    // use bower manually to do all the things
+    var bowerJSON = require('./bower.json');
 
-// CLEAN:
-gulp.task('clean:build', function() {
-    // without /* will remove the folder as well
-    gulp.src('build/*')
-        .pipe(tasks.clean());
-});
-gulp.task('clean:dev', function() {
-    gulp.src(['build/app.js', 'build/' + appName + '.css', 'build/' + appName + '.js'])
-        .pipe(tasks.clean());
-});
-gulp.task('clean:prod', function() {
-    gulp.src('dist')
-        .pipe(tasks.clean());
 });
 
 // BROWSERIFY:
-gulp.task('browserify:vendor', function() {
-    gulp.src([
-        './bower_components/jquery/jquery.js',
-        './bower_components/underscore/underscore.js',
-        './bower_components/backbone/backbone.js',
-        './bower_components/backbone.marionette/lib/backbone.marionette.js'
-        ])
+gulp.task('browserify', function() {
+    // gulpify version:
+    return gulp.src('./client/src/main.js')
         .pipe(tasks.browserify({
-            insertGlobals: true,
-            transform: ['browserify-shim']
+            transform: ['hbsfy', 'browserify-shim']
         }))
-        .pipe(tasks.concat('vendor.js'))
-        .pipe(gulp.dest('./build'));
-});
+        .pipe(tasks.concat(appName + '.js'))
+        .pipe(gulp.dest('./public/js/'));
 
-gulp.task('browserify:app', function() {
-    gulp.src('./client/src/main.js')
+    // vinyl-source-stream version:
+    // var bundleStream = browserify('./client/src/main.js', { transform: ['hbsfy', 'browserify-shim'] }).bundle();
+    // bundleStream
+    //     .pipe(source('myapp.js'))
+    //     .pipe(gulp.dest('./public/js/myapp.js'));
+
+    // TO DO (maybe?):
+    // 1. break the above into 2 steps, vendor and app
+    // 2. get externals working with the app browserify
+    // 3. include concat step in the app build (only do vendor once during gulp init)
+    // 4. browserify tests files
+});
+gulp.task('browserify:tests', function() {
+    // gulpify version:
+    return gulp.src('./client/spec/**/*.js')
         .pipe(tasks.browserify({
-            insertGlobals: true,
-            transform: ['browserify-handlebars'],
-            external: ['jquery', 'underscore', 'backbone', 'backbone.marionette']
+            transform: ['hbsfy', 'browserify-shim']
         }))
-        .pipe(tasks.concat('app.js'))
-        .pipe(gulp.dest('./build'));
+        .pipe(tasks.concat('tests.js'))
+        .pipe(gulp.dest('./build/'));
 });
 
 // LESS:
 gulp.task('less', function() {
-    gulp.src('./client/styles/less/*.less')
+    return gulp.src([
+        'client/styles/reset.css',
+        'client/requires/*/css/*',
+        'client/styles/less/main.less'
+    ])
         .pipe(tasks.less())
-        .pipe(gulp.dest('./build/' + appName + '.css'));
+        .pipe(tasks.concat(appName + '.css'))
+        .pipe(gulp.dest('./public/css/'));
 });
 
-// CONCAT:
-gulp.task('concat', function() {
-    gulp.src(['./build/vendor.js', './build/app.js'])
-        .pipe(tasks.concat(appName + '.js'))
-        .pipe(gulp.dest('./public/js/'));
+
+
+// KARMA:
+// gulp.task('test:client', function() {
+//     gulp.run('browserify:tests');
+//     tasks.spawn('karma',  ['start', 'karma.config.js'], { stdio : 'inherit' });
+//     // this doesnt work currently - known issue with jasmine plugin
+//     // return gulp.src(['build/tests.js'])
+//     //     .pipe(tasks.karma({
+//     //         configFile: 'karma.conf.js',
+//     //         action: 'run'
+//     //     }));
+// });
+
+
+
+gulp.task('server', function() {
+    gulp.src('./server.js')
+        .pipe(tasks.exec('mongod', {
+            async: true
+        }));
+
+    gulp.src('./server.js')
+        .pipe(tasks.nodemon({
+            watchedFolders: ['controllers', 'app'],
+            env: {
+                PORT: '3300'
+            }
+        }));
+
+    // WATCHERS:
+    gulp.watch('client/src/**/*.js', function(event) {
+        gulp.run('browserify');
+    });
+    gulp.watch('client/styles/**/*.*', function(event) {
+        gulp.run('less');
+    });
 });
 
+// this replaces 'grunt init:dev'
+gulp.task('init', function() {
+    gulp.run('bower', 'browserify:vendor');
+});
 
 // this replaces 'grunt server' with just 'gulp'
-gulp.task('default', function(){
-  // place code for your default task here
-  gulp.run('clean:build', 'browserify:vendor', 'browserify:app');
-
+gulp.task('default', function() {
+    gulp.run('less', 'browserify', 'server');
 });
-
