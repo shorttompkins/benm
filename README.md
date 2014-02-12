@@ -71,4 +71,13 @@ To run tests once:
 
 ### Server Tests:
 
-Coming soon!
+Server tests have been added using Mocha, Chai, and Proxyquire.  To run the
+tests:
+
+    $ grunt test:server
+
+Note:
+
+    $ grunt test
+
+(will run all tests - both server and client)
