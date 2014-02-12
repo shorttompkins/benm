@@ -104,4 +104,41 @@ describe('Contacts Controller', function() {
             expect(res.json).calledWith({error: 'Error adding contact.'});
         });
     });
+
+    describe('delete', function() {
+        beforeEach(function() {
+            req.body = {
+                id: '1',
+                name: 'testing',
+                email: 'test@testing.com',
+                phone: '123-456-7890'
+            };
+        });
+
+        it('should be defined', function() {
+            expect(contacts.delete).to.be.a.function;
+        });
+
+        it('should return json on save', function() {
+            var contactSpy = {remove: sinon.spy()};
+            modelsStub.Contact = {
+                findOne: function(query, callback) {
+                    callback(null, contactSpy);
+                }
+            };
+
+            contacts.delete(req, res);
+            expect(contactSpy.remove).calledOnce;
+        });
+        it('should return error on failed save', function() {
+            modelsStub.Contact = {
+                findOne: function(query, callback) {
+                    callback({}, {});
+                }
+            };
+
+            contacts.delete(req, res);
+            expect(res.json).calledWith({error: 'Contact not found.'});
+        });
+    });
 });
