@@ -171,6 +171,21 @@ module.exports = function(grunt) {
             }
         },
 
+        // server tests
+        simplemocha: {
+            options: {
+                globals: ['expect', 'sinon'],
+                timeout: 3000,
+                ignoreLeaks: false,
+                ui: 'bdd',
+                reporter: 'spec'
+            },
+
+            server: {
+                src: ['spec/spechelper.js', 'spec/**/*.test.js']
+            }
+        },
+
         // mongod server launcher
         shell: {
             mongo: {
@@ -225,7 +240,10 @@ module.exports = function(grunt) {
     grunt.registerTask('heroku', ['init:dev', 'build:dev']);
 
     grunt.registerTask('server', ['build:dev', 'concurrent:dev']);
+    grunt.registerTask('test:server', ['simplemocha:server']);
 
     grunt.registerTask('test:client', ['karma:test']);
     grunt.registerTask('tdd', ['karma:watcher:start', 'concurrent:test']);
+
+    grunt.registerTask('test', ['test:server', 'test:client']);
 };

@@ -50,6 +50,11 @@
     "grunt-contrib-handlebars": "~0.6.0",
     "grunt-contrib-cssmin": "~0.7.0",
     "hbsfy": "~1.0.0",
-    "grunt-shell-spawn": "~0.3.0"
+    "grunt-shell-spawn": "~0.3.0",
+    "chai": "~1.9.0",
+    "sinon": "~1.8.1",
+    "sinon-chai": "~2.5.0",
+    "grunt-simple-mocha": "~0.4.0",
+    "proxyquire": "~0.5.2"
   }
 }
