@@ -10,12 +10,13 @@ http://kroltech.com/2013/12/boilerplate-web-app-using-backbone-js-expressjs-node
  * Backbone.js
   * Handlebars
   * Browserify
-  * Jasmine
+  * Jasmine tests
   * Karma
   * Basic UI app
  * Express / Node.js
   * Handlebars
-  * Jasmine tests
+  * Mocha test runner
+  * Chai, Sinon, Proxyquire tests
  * MongoDB
   * Mongoose
  * Bower
@@ -27,8 +28,8 @@ http://kroltech.com/2013/12/boilerplate-web-app-using-backbone-js-expressjs-node
   * jsHinting
   * LESS
   * Minification/Uglification
-  * Karma, Jasmine testing/tdd
-  * Mocha, Chai, Sinon, Proxyquire node testing
+  * Karma client testing/tdd
+  * Mocha node testing
   * Watchers
   * Concatenation/Copy
   * Concurrent runs (server, karma, mongod, etc)
