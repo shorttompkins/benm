@@ -11,7 +11,6 @@ http://kroltech.com/2013/12/boilerplate-web-app-using-backbone-js-expressjs-node
   * Handlebars
   * Browserify
   * Jasmine tests
-  * Karma
   * Basic UI app
  * Express / Node.js
   * Handlebars
