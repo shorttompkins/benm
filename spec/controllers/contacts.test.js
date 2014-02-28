@@ -36,7 +36,7 @@ describe('Contacts Controller', function() {
 
     describe('index', function() {
         it('should be defined', function() {
-            expect(contacts.index).to.be.a.function;
+            expect(contacts.index).to.be.a('function');
         });
 
         it('should send json', function() {
@@ -47,7 +47,7 @@ describe('Contacts Controller', function() {
 
     describe('getById', function() {
         it('should be defined', function() {
-            expect(contacts.getById).to.be.a.function;
+            expect(contacts.getById).to.be.a('function');
         });
 
         it('should send json on successful retrieve', function() {
@@ -76,7 +76,7 @@ describe('Contacts Controller', function() {
         });
 
         it('should be defined', function() {
-            expect(contacts.add).to.be.a.function;
+            expect(contacts.add).to.be.a('function');
         });
 
         it('should return json on save', function() {
@@ -116,7 +116,7 @@ describe('Contacts Controller', function() {
         });
 
         it('should be defined', function() {
-            expect(contacts.delete).to.be.a.function;
+            expect(contacts.delete).to.be.a('function');
         });
 
         it('should return json on save', function() {
