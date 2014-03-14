@@ -27,5 +27,16 @@ module.exports = {
     update: function(req, res) {
         console.log(req.body);
         res.json(req.body);
+    },
+    delete: function(req, res) {
+        models.Contact.findOne({ _id: req.params.id }, function(err, contact) {
+            if (err) {
+                res.json({error: 'Contact not found.'});
+            } else {
+                contact.remove(function(err, contact){
+                    res.json(200, {status: 'Success'});
+                })
+            }
+        });
     }
 };
