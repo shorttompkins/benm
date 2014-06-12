@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "node server/server.js",
-    "test": "grunt test"
+    "test": "grunt build:dev test"
   },
   "dependencies": {
     "express": "^4.0.0",
