@@ -5,7 +5,12 @@ var express = require('express'),
     exphbs = require('express3-handlebars'),
     mongoose = require('mongoose'),
     seeder = require('./app/seeder'),
-    app = express();
+    app = express(),
+    bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser'),
+    morgan = require('morgan'),
+    methodOverride = require('method-override'),
+    errorHandler = require('errorhandler');
 
 app.set('port', process.env.PORT || 3300);
 app.set('views', __dirname + '/views');
