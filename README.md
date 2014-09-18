@@ -3,7 +3,7 @@
 Backbone.js, ExpressJS & node.js, MongoDB
 
 [![Build Status](https://travis-ci.org/jkat98/benm.svg?branch=master)](https://travis-ci.org/jkat98/benm)
-(https://david-dm.org/jkat98/benm.png)
+![Dependency Status](https://david-dm.org/jkat98/benm.png)
 
 This boilerplate app features a complete backend using node.js with ExpressJS, a data layer using MongoDB with Mongoose, and a complete front-end application built using Backbone.js (with Marionette and Browserify).  The front-end application is a simple Contacts manager.  All of the code is fairly basic yet functional.
 
