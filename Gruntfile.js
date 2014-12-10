@@ -43,15 +43,6 @@ module.exports = function(grunt) {
                             depends: {
                                 underscore: 'underscore'
                             }
-                        },
-                        'backbone.marionette': {
-                            path: 'client/requires/backbone.marionette/js/backbone.marionette.js',
-                            exports: 'Marionette',
-                            depends: {
-                                jquery: '$',
-                                backbone: 'Backbone',
-                                underscore: '_'
-                            }
                         }
                     }
                 }
@@ -62,7 +53,7 @@ module.exports = function(grunt) {
                 },
                 options: {
                     transform: ['hbsfy'],
-                    external: ['jquery', 'underscore', 'backbone', 'backbone.marionette']
+                    external: ['jquery', 'underscore', 'backbone']
                 }
             },
             test: {
@@ -73,7 +64,7 @@ module.exports = function(grunt) {
                 },
                 options: {
                     transform: ['hbsfy'],
-                    external: ['jquery', 'underscore', 'backbone', 'backbone.marionette']
+                    external: ['jquery', 'underscore', 'backbone']
                 }
             }
         },
